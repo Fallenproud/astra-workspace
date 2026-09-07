@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "id": "orchestration-001",
+  "slug": "multi-agent-orchestration",
+  "name": "Multi-Agent Orchestration",
+  "version": "0.1.0",
+  "category": "orchestration",
+  "description": "Plans work, selects specialists, dispatches bounded parallel tasks, verifies artifacts, synthesizes outputs, and reroutes failures only when multi-agent separation adds value.",
+  "status": "defined",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "workflow",
+  "routing": {
+    "trigger": "task benefits from separable specialist work, parallelism, isolation, or independent evaluation",
+    "boundary": "single-agent execution is simpler and equally reliable",
+    "invoke_conditions": [
+      "task benefits from separable specialist work, parallelism, isolation, or independent evaluation"
+    ],
+    "block_conditions": [
+      "single-agent execution is simpler and equally reliable"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "agents",
+      "orchestration",
+      "parallel",
+      "dag",
+      "synthesis"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "goal",
+      "constraints",
+      "available skills/agents",
+      "dependencies",
+      "budget/concurrency limits"
+    ],
+    "outputs": [
+      "execution plan",
+      "dispatch graph",
+      "artifact/evidence map",
+      "synthesized result",
+      "failure/retry record"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

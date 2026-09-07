@@ -1,0 +1,1 @@
+{"agent-archify-001":{"adapter":"archify-local","runtime":"node","modelRequired":false,"permissions":["read-supplied-diagram","write-local-diagram"],"approval":"explicit-invoke","inputs":["mermaid-acyclic-flowchart"],"upstream":"tt-a1i/archify","revision":"c6519401f7b91b9d43011657880893b0a8955548"}}

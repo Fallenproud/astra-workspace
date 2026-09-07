@@ -1,0 +1,12 @@
+{
+  "canvas": "#0A0B0C",
+  "obsidian": "#0E1010",
+  "graphite": "#141616",
+  "charcoal": "#1C1F1E",
+  "elevated": "#232626",
+  "structuralLine": "#4F5151",
+  "text": "#F3F6F3",
+  "secondary": "#C8D0C8",
+  "muted": "#9DA89D",
+  "disabled": "#6E766E"
+}

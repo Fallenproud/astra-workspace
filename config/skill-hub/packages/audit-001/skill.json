@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "id": "audit-001",
+  "slug": "systems-auditor",
+  "name": "Systems Auditor",
+  "version": "0.2.0",
+  "category": "audit",
+  "description": "Maps repositories and artifacts into architecture, contracts, dependencies, implementation states, risks, missing bridges, and next-build order.",
+  "status": "validated",
+  "priority": 1,
+  "maturity": "L3",
+  "capability_type": "evaluation",
+  "routing": {
+    "trigger": "repository/project requires proper audit and review",
+    "boundary": "only a narrow copy edit is requested",
+    "invoke_conditions": [
+      "repository/project requires proper audit and review",
+      "implementation state must be reconstructed",
+      "recovery/reuse opportunities must be identified"
+    ],
+    "block_conditions": [
+      "only a narrow copy edit is requested"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "audit",
+      "repository",
+      "architecture",
+      "recovery",
+      "evidence"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "repository/archive/artifact",
+      "requirements or stated intent",
+      "optional deployment/runtime evidence"
+    ],
+    "outputs": [
+      "system map",
+      "REAL/PLANNED/SIMULATED matrix",
+      "risk findings",
+      "reusable components",
+      "missing bridges",
+      "ordered next steps"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": true
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

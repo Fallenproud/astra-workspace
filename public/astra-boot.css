@@ -1,0 +1,15 @@
+html{background:#0a0b0c}body:has(#astra-splash){margin:0;overflow:hidden}
+#astra-splash{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 44%,#152018 0%,#0e1210 27%,#0a0b0c 64%);color:#f3f6f3;font-family:Arial,sans-serif;opacity:1;transition:opacity .65s cubic-bezier(.22,1,.36,1);isolation:isolate}
+#astra-splash:before{content:"";position:absolute;width:min(72vw,740px);aspect-ratio:1;border:1px solid #70c0600c;border-radius:50%;box-shadow:0 0 100px #60b05005,inset 0 0 100px #60b05005;pointer-events:none}
+.boot-content{text-align:center;width:min(280px,76vw);position:relative;transform:translateY(-12px);transition:transform .65s cubic-bezier(.22,1,.36,1),filter .65s}
+.boot-emblem{height:128px;width:128px;margin:0 auto 24px;position:relative;filter:drop-shadow(0 12px 24px #60b05018)}
+.boot-emblem img{position:absolute;inset:0;width:100%;height:100%;transition:opacity .35s}.boot-loop,.boot-static{opacity:0}#astra-splash.is-waiting .boot-loop{opacity:1}#astra-splash.is-waiting .boot-assembly{opacity:0}
+.boot-brand{font-size:20px;letter-spacing:-.6px;margin:0 0 29px;font-weight:600}.boot-brand span{font-weight:400;color:#c7cec8}
+.boot-track{height:3px;overflow:hidden;position:relative;border-radius:10px;background:#c3d0c312;box-shadow:0 0 0 1px #ffffff05}
+.boot-track span{display:block;position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,#60b05088,#9bdb8e,#dce8dd99,transparent);animation:boot-scan 1.7s ease-in-out infinite}
+#boot-status{font-size:11px;letter-spacing:.7px;color:#9da89d;min-height:16px;margin:16px 0 0}.boot-retry{display:none;color:#b5dbae;font-size:13px;margin-top:20px;text-underline-offset:4px}#astra-splash.is-error .boot-retry{display:inline-block}#astra-splash.is-error .boot-track span{animation:none;transform:none;opacity:.3}
+#astra-splash.is-ready .boot-track span{animation:none;transform:none;background:linear-gradient(90deg,#305030,#70c060,#c1d9c3)}
+#astra-splash.is-leaving{opacity:0;pointer-events:none}#astra-splash.is-leaving .boot-content{transform:translateY(-20px);filter:blur(3px)}
+#root[inert]{visibility:hidden}#root.boot-enter{animation:boot-page .8s cubic-bezier(.22,1,.36,1) both}
+@keyframes boot-scan{to{transform:translateX(100%)}}@keyframes boot-page{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#astra-splash,#astra-splash .boot-content{transition:none}.boot-assembly,.boot-loop{display:none}.boot-static{opacity:1}.boot-track span{animation:none;transform:none;opacity:.5}#root.boot-enter{animation:none}}

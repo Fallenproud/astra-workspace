@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "id": "ux-008",
+  "slug": "frontend-fidelity-reconstruction",
+  "name": "Frontend Fidelity Reconstruction",
+  "version": "0.1.0",
+  "category": "ux",
+  "description": "Builds production frontend implementations from approved references with explicit precedence, responsive rules, and visual-regression requirements.",
+  "status": "defined",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "implementation",
+  "routing": {
+    "trigger": "approved references should become a working frontend",
+    "boundary": "reference authority is ambiguous and cannot be resolved",
+    "invoke_conditions": [
+      "approved references should become a working frontend"
+    ],
+    "block_conditions": [
+      "reference authority is ambiguous and cannot be resolved"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "frontend",
+      "reconstruction",
+      "visual-regression",
+      "responsive"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "approved reference pack",
+      "blueprint/topology",
+      "assets",
+      "framework constraints"
+    ],
+    "outputs": [
+      "frontend scaffold/implementation",
+      "asset bindings",
+      "responsive behavior",
+      "visual regression report"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [
+      "registry-id-history:ux-002→ux-008"
+    ],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

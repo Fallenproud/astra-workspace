@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "id": "brand-001",
+  "slug": "brand-identity-packaging",
+  "name": "Brand Identity Packaging",
+  "version": "1.0.0",
+  "category": "brand",
+  "description": "Transforms an approved identity direction into a verified, vector-first, documented, frontend-ready brand operating package.",
+  "status": "validated",
+  "priority": 1,
+  "maturity": "L4",
+  "capability_type": "workflow",
+  "routing": {
+    "trigger": "approved identity direction needs production packaging",
+    "boundary": "identity direction is not approved",
+    "invoke_conditions": [
+      "approved identity direction needs production packaging",
+      "brand assets need vector QA and implementation handoff"
+    ],
+    "block_conditions": [
+      "identity direction is not approved",
+      "request is only for one isolated image"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "brand",
+      "identity",
+      "svg",
+      "tokens",
+      "handoff"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "approved identity direction",
+      "source assets",
+      "brand constraints",
+      "target surfaces"
+    ],
+    "outputs": [
+      "verified asset package",
+      "SVG/vector outputs",
+      "design tokens",
+      "usage guidance",
+      "frontend handoff",
+      "integrity report"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

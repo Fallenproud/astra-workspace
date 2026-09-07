@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "id": "audio-002",
+  "slug": "text-to-speech-z-ai",
+  "name": "Text-to-Speech — z-ai",
+  "version": "0.1.0",
+  "category": "audio",
+  "description": "Converts text into natural-sounding speech with z-ai-web-dev-sdk using backend-only execution, voice selection, speed/volume controls, chunking, batch generation, and verified audio delivery.",
+  "status": "validated",
+  "priority": 2,
+  "maturity": "L2",
+  "capability_type": "generation",
+  "routing": {
+    "trigger": "User needs text converted into spoken audio or TTS integrated into an application",
+    "boundary": "Not for speech-to-text, music generation, or non-speech audio analysis",
+    "invoke_conditions": [
+      "generate spoken audio from text",
+      "create WAV MP3 or PCM narration",
+      "add TTS to a backend or web application",
+      "batch-generate voice files",
+      "build accessibility narration or announcements",
+      "generate dynamic voice-assistant responses"
+    ],
+    "block_conditions": [
+      "task is speech-to-text",
+      "task is music generation",
+      "requested implementation would expose z-ai-web-dev-sdk in client-side code"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "tts",
+      "text-to-speech",
+      "audio",
+      "voice",
+      "z-ai",
+      "z-ai-web-dev-sdk",
+      "wav",
+      "mp3",
+      "pcm",
+      "backend"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "text",
+      "optional voice",
+      "optional speed 0.5-2.0",
+      "optional volume >0 and <=10",
+      "optional output format wav/mp3/pcm",
+      "optional streaming flag"
+    ],
+    "outputs": [
+      "generated speech audio buffer or file",
+      "structured generation result",
+      "backend API response when integrated into an application",
+      "explicit error or partial batch result on failure"
+    ]
+  },
+  "policy": {
+    "cost_class": "medium",
+    "latency_class": "normal",
+    "requires_auth": true,
+    "requires_freshness": true,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": true
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "node": "backend-only",
+    "nextjs": "server route compatible",
+    "express": "server endpoint compatible"
+  },
+  "provenance": {
+    "source_class": "user-provided-and-canonicalized",
+    "source_refs": [
+      "user-provided TTS SKILL.md for z-ai-web-dev-sdk"
+    ],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": [
+      "z-ai-web-dev-sdk"
+    ]
+  },
+  "constraints": {
+    "max_input_characters_per_request": 1024,
+    "speed_min": 0.5,
+    "speed_max": 2.0,
+    "volume_min_exclusive": 0,
+    "volume_max_inclusive": 10,
+    "streaming_format": "pcm",
+    "non_streaming_formats": ["wav", "pcm", "mp3"],
+    "recommended_sample_rate_hz": 24000,
+    "backend_only": true
+  }
+}

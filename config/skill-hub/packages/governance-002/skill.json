@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "id": "governance-002",
+  "slug": "human-approval-gate",
+  "name": "Human Approval Gate",
+  "version": "0.1.0",
+  "category": "governance",
+  "description": "Pauses sensitive actions, presents evidence and expected impact, and requires authorized human approval before execution.",
+  "status": "defined",
+  "priority": 2,
+  "maturity": "L2",
+  "capability_type": "runtime-policy",
+  "routing": {
+    "trigger": "policy marks an operation as sensitive or approval-required",
+    "boundary": "operation is already explicitly denied by policy",
+    "invoke_conditions": [
+      "policy marks an operation as sensitive or approval-required"
+    ],
+    "block_conditions": [
+      "operation is already explicitly denied by policy"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "approval",
+      "governance",
+      "policy",
+      "human-in-loop"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "proposed action",
+      "risk/evidence",
+      "requesting identity",
+      "scope/expiry"
+    ],
+    "outputs": [
+      "approval request",
+      "approved/denied/expired decision",
+      "audit event"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": true
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

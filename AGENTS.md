@@ -1,0 +1,1 @@
+Read ~/.codex/policies/SOPHIE-X-COMPUTE-GOVERNOR.md before substantial work. Default NORMAL, STRICT, no subagents. Preserve Astra control-plane ownership and the independent Codex adapter. Never add credentials to tracked files. Test targeted changes and stop on acceptance. Live provider execution must not be claimed from deterministic fixtures.

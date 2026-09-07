@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "id": "research-001",
+  "slug": "evidence-grounded-research",
+  "name": "Evidence-Grounded Research",
+  "version": "0.1.0",
+  "category": "research",
+  "description": "Produces source-backed research with freshness checks, source authority, fact/inference separation, citations, and explicit uncertainty.",
+  "status": "defined",
+  "priority": 2,
+  "maturity": "L2",
+  "capability_type": "research",
+  "routing": {
+    "trigger": "decision-quality research or current external facts are required",
+    "boundary": "task is purely creative or transformation of supplied text",
+    "invoke_conditions": [
+      "decision-quality research or current external facts are required"
+    ],
+    "block_conditions": [
+      "task is purely creative or transformation of supplied text"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "research",
+      "citations",
+      "freshness",
+      "evidence"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "research question",
+      "scope",
+      "freshness requirements",
+      "source constraints"
+    ],
+    "outputs": [
+      "findings",
+      "source map",
+      "fact/inference separation",
+      "uncertainties",
+      "decision-relevant synthesis"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": true,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

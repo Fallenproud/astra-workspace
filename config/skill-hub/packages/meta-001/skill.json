@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "id": "meta-001",
+  "slug": "capability-conditioning-protocol",
+  "name": "Capability Conditioning Protocol",
+  "version": "0.1.0",
+  "category": "meta",
+  "description": "Checkpointed process for turning raw multimodal source material into governed, testable, runtime-improvable capabilities.",
+  "status": "defined",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "foundry-protocol",
+  "routing": {
+    "trigger": "raw documents/prompts/code/assets should become a reusable skill",
+    "boundary": "source provenance cannot be established",
+    "invoke_conditions": [
+      "raw documents/prompts/code/assets should become a reusable skill",
+      "a candidate requires governance before promotion"
+    ],
+    "block_conditions": [
+      "source provenance cannot be established"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "foundry",
+      "conditioning",
+      "canonicalization",
+      "governance"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "source material",
+      "provenance",
+      "target runtime constraints"
+    ],
+    "outputs": [
+      "comprehension map",
+      "dependency map",
+      "risk report",
+      "draft skill package",
+      "simulation/evaluation evidence",
+      "promotion decision"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Astra Workspace",
+  "version": "1.2.0",
+  "canonicalSource": "canonical-source-v1.2.md",
+  "sourceSHA256": "30d18f91715ad3abe6d366d49bb91d3978ed1c0326584f5736cd1cb769b2b83b",
+  "legacyZipSHA256": "56b09f14ac9c51bb109f361e1a28f3deb39d577952b7c6cad8dd89a13cf78b20",
+  "logoProvenance": "Vector reconstruction from supplied v1.2 raster references; legacy vector rejected as superseded",
+  "referenceImages": [
+    "landing",
+    "signup",
+    "workspace",
+    "blueprint"
+  ],
+  "runtimeMode": "development",
+  "realSecretsUsed": false
+}

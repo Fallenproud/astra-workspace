@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "id": "deployment-001",
+  "slug": "deployment-ready-package-builder",
+  "name": "Deployment-Ready Package Builder",
+  "version": "0.1.0",
+  "category": "deployment",
+  "description": "Packages a verified project for a declared hosting target with environment templates, manifests, smoke checks, and rollback guidance.",
+  "status": "defined",
+  "priority": 2,
+  "maturity": "L1",
+  "capability_type": "workflow",
+  "routing": {
+    "trigger": "project needs a deployable handoff for a specific hosting target",
+    "boundary": "target platform or runtime requirements are unknown",
+    "invoke_conditions": [
+      "project needs a deployable handoff for a specific hosting target"
+    ],
+    "block_conditions": [
+      "target platform or runtime requirements are unknown"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "deployment",
+      "package",
+      "handoff",
+      "smoke-test"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "verified project",
+      "target platform",
+      "environment requirements",
+      "domain/deployment constraints"
+    ],
+    "outputs": [
+      "deployment bundle",
+      "environment template",
+      "runbook",
+      "smoke checks",
+      "rollback guidance"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Astra folded A logo</title>
+  <desc id="desc">The original folded A assembles in four precise motions, then settles into a restrained green signal pulse.</desc>
+  <defs>
+    <linearGradient id="upright" x1="28" y1="85" x2="61" y2="9" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#305030"/>
+      <stop offset=".58" stop-color="#60B050"/>
+      <stop offset="1" stop-color="#70C060"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="57" y1="15" x2="69" y2="67" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#407040"/>
+      <stop offset="1" stop-color="#162C19"/>
+    </linearGradient>
+    <linearGradient id="foot" x1="54" y1="58" x2="83" y2="87" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#70C060"/>
+      <stop offset="1" stop-color="#407040"/>
+    </linearGradient>
+    <radialGradient id="signal" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#B8FF9A" stop-opacity=".95"/>
+      <stop offset=".38" stop-color="#73F542" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#73F542" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="microGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="0.75" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      :root { --ease: cubic-bezier(.2,.8,.2,1); }
+      #mark { transform-origin: 50px 50px; animation: settle 5.2s var(--ease) infinite; }
+      #upright-shape { transform-origin: 43px 48px; transform-box: fill-box; animation: uprightIn 5.2s var(--ease) infinite; }
+      #fold-shape { transform-origin: 62px 10px; transform-box: fill-box; animation: foldIn 5.2s var(--ease) infinite; }
+      #foot-shape { transform-origin: 43px 61px; transform-box: fill-box; animation: footIn 5.2s var(--ease) infinite; }
+      #bridge-shape { transform-origin: 43px 61px; transform-box: fill-box; animation: bridgeIn 5.2s var(--ease) infinite; }
+      #cap-shape { transform-origin: 50px 24px; transform-box: fill-box; animation: capIn 5.2s var(--ease) infinite; }
+      #signalCore { transform-origin: 50px 61px; animation: signalPulse 5.2s ease-in-out infinite; }
+      #edgePulse { stroke-dasharray: 150; stroke-dashoffset: 150; animation: trace 5.2s ease-in-out infinite; }
+
+      @keyframes uprightIn {
+        0%, 4% { opacity:0; transform:translate(-12px,8px) scale(.94); }
+        18%, 100% { opacity:1; transform:none; }
+      }
+      @keyframes foldIn {
+        0%, 13% { opacity:0; transform:translate(10px,-7px) rotate(7deg) scale(.96); }
+        28%, 100% { opacity:1; transform:none; }
+      }
+      @keyframes footIn {
+        0%, 22% { opacity:0; transform:translate(12px,10px) scaleX(.72); }
+        38%, 100% { opacity:1; transform:none; }
+      }
+      @keyframes bridgeIn {
+        0%, 30% { opacity:0; transform:translateY(8px) scale(.84); }
+        44%, 100% { opacity:1; transform:none; }
+      }
+      @keyframes capIn {
+        0%, 34% { opacity:0; transform:scale(.6); }
+        49%, 100% { opacity:1; transform:none; }
+      }
+      @keyframes signalPulse {
+        0%, 38% { opacity:0; transform:scale(.35); }
+        48% { opacity:.9; transform:scale(1); }
+        57% { opacity:.22; transform:scale(1.8); }
+        69%, 100% { opacity:0; transform:scale(2.15); }
+      }
+      @keyframes trace {
+        0%, 42% { opacity:0; stroke-dashoffset:150; }
+        48% { opacity:.78; }
+        63% { opacity:0; stroke-dashoffset:0; }
+        100% { opacity:0; stroke-dashoffset:0; }
+      }
+      @keyframes settle {
+        0%, 44% { transform:scale(1); }
+        49% { transform:scale(1.014); }
+        55%, 100% { transform:scale(1); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #mark, #upright-shape, #fold-shape, #foot-shape, #bridge-shape, #cap-shape, #signalCore, #edgePulse { animation:none !important; }
+      }
+    </style>
+  </defs>
+
+  <g id="mark">
+    <path id="upright-shape" d="M9 87 43 10H62L31 87Z" fill="url(#upright)"/>
+    <path id="fold-shape" d="m62 10 21 53H61L50 37Z" fill="url(#fold)"/>
+    <path id="foot-shape" d="M43 61h50L75 87H60Z" fill="url(#foot)"/>
+    <path id="bridge-shape" d="m43 61 17 26H31Z" fill="#305030"/>
+    <path id="cap-shape" d="M43 10h19L50 37Z" fill="#70C060" fill-opacity=".28"/>
+
+    <!-- restrained one-shot trace on each cycle -->
+    <path id="edgePulse" d="M9 87 43 10H62L83 63H93L75 87H60L43 61 31 87Z" fill="none" stroke="#9AFF70" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round" filter="url(#microGlow)"/>
+    <circle id="signalCore" cx="50" cy="61" r="5.5" fill="url(#signal)" filter="url(#softGlow)" pointer-events="none"/>
+  </g>
+</svg>

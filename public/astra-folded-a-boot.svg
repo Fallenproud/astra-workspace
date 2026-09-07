@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img">
+  <defs>
+    <linearGradient id="upright" x1="28" y1="85" x2="61" y2="9" gradientUnits="userSpaceOnUse"><stop stop-color="#305030"/><stop offset=".58" stop-color="#60B050"/><stop offset="1" stop-color="#70C060"/></linearGradient>
+    <linearGradient id="fold" x1="57" y1="15" x2="69" y2="67" gradientUnits="userSpaceOnUse"><stop stop-color="#407040"/><stop offset="1" stop-color="#162C19"/></linearGradient>
+    <linearGradient id="foot" x1="54" y1="58" x2="83" y2="87" gradientUnits="userSpaceOnUse"><stop stop-color="#70C060"/><stop offset="1" stop-color="#407040"/></linearGradient>
+    <radialGradient id="signal" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#C9FFB0" stop-opacity="1"/><stop offset=".35" stop-color="#73F542" stop-opacity=".7"/><stop offset="1" stop-color="#73F542" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .p { opacity:0; animation-fill-mode:forwards; animation-timing-function:cubic-bezier(.2,.8,.2,1); }
+      #p1 { transform-origin:43px 48px; animation:in1 .34s .02s forwards; }
+      #p2 { transform-origin:62px 10px; animation:in2 .34s .18s forwards; }
+      #p3 { transform-origin:43px 61px; animation:in3 .34s .34s forwards; }
+      #p4 { transform-origin:43px 61px; animation:in4 .30s .48s forwards; }
+      #p5 { transform-origin:50px 24px; animation:in5 .24s .58s forwards; }
+      #pulse { opacity:0; transform-origin:50px 61px; animation:pulse .72s .72s forwards; }
+      @keyframes in1 { from{opacity:0;transform:translate(-12px,8px) scale(.94)} to{opacity:1;transform:none} }
+      @keyframes in2 { from{opacity:0;transform:translate(10px,-7px) rotate(7deg) scale(.96)} to{opacity:1;transform:none} }
+      @keyframes in3 { from{opacity:0;transform:translate(12px,10px) scaleX(.72)} to{opacity:1;transform:none} }
+      @keyframes in4 { from{opacity:0;transform:translateY(8px) scale(.84)} to{opacity:1;transform:none} }
+      @keyframes in5 { from{opacity:0;transform:scale(.6)} to{opacity:1;transform:none} }
+      @keyframes pulse { 0%{opacity:0;transform:scale(.3)} 35%{opacity:.95;transform:scale(1)} 100%{opacity:0;transform:scale(2.25)} }
+      @media(prefers-reduced-motion:reduce){.p,#pulse{animation:none!important;opacity:1!important;transform:none!important}#pulse{opacity:0!important}}
+    </style>
+  </defs>
+  <path id="p1" class="p" d="M9 87 43 10H62L31 87Z" fill="url(#upright)"/>
+  <path id="p2" class="p" d="m62 10 21 53H61L50 37Z" fill="url(#fold)"/>
+  <path id="p3" class="p" d="M43 61h50L75 87H60Z" fill="url(#foot)"/>
+  <path id="p4" class="p" d="m43 61 17 26H31Z" fill="#305030"/>
+  <path id="p5" class="p" d="M43 10h19L50 37Z" fill="#70C060" fill-opacity=".28"/>
+  <circle id="pulse" cx="50" cy="61" r="5.5" fill="url(#signal)" filter="url(#glow)"/>
+</svg>

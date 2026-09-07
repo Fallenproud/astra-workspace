@@ -1,0 +1,65 @@
+{
+  "results": [
+    {
+      "motion": "playing"
+    },
+    {
+      "width": 1917,
+      "height": 870,
+      "sidebarBottom": 858,
+      "footerBottom": 841,
+      "mainBottom": 858,
+      "scrollHeight": 870,
+      "scrollWidth": 1917
+    },
+    {
+      "width": 1534,
+      "height": 696,
+      "sidebarBottom": 684,
+      "footerBottom": 667,
+      "mainBottom": 684,
+      "scrollHeight": 696,
+      "scrollWidth": 1534
+    },
+    {
+      "width": 1280,
+      "height": 600,
+      "sidebarBottom": 588,
+      "footerBottom": 571,
+      "mainBottom": 588,
+      "scrollHeight": 600,
+      "scrollWidth": 1280
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "sidebarBottom": 488,
+      "footerBottom": 471,
+      "mainBottom": 488,
+      "scrollHeight": 500,
+      "scrollWidth": 1024
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "sidebarBottom": 836,
+      "footerBottom": 819,
+      "mainBottom": 836,
+      "scrollHeight": 844,
+      "scrollWidth": 390
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "sidebarBottom": 560,
+      "footerBottom": 543,
+      "mainBottom": 560,
+      "scrollHeight": 568,
+      "scrollWidth": 320
+    }
+  ],
+  "errors": [],
+  "reducedMotion": "no canvas allocated",
+  "pause": "canvas disposed",
+  "resume": "at most one canvas"
+}

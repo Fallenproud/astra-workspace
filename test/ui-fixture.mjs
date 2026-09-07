@@ -1,0 +1,11 @@
+import {createApp}from'../server/index.mjs';import http from'node:http';import{join}from'node:path';import{mkdir}from'node:fs/promises';import{seal}from'../server/security.mjs';
+const runtime=await createApp({dataDir:join(import.meta.dirname,'../work/acceptance-data'),port:4318,test:true});const token=runtime.vault.login('astra-ui-test-only-2026');const session=runtime.vault.session({headers:{cookie:'astra_session='+token}});
+if(!runtime.store.all('providers').length){const p=runtime.store.put('providers',{name:'Acceptance fixture (not a live model)',protocol:'responses',url:'http://127.0.0.1:4319/v1',secret:seal('test-only',session.key),models:['test-model'],status:'connected'});runtime.store.put('system',{id:'settings',providerId:p.id,model:'test-model'})}
+http.createServer(async(req,res)=>{res.setHeader('Content-Type','application/json');if(req.url==='/v1/models')return res.end(JSON.stringify({data:[{id:'test-model'}]}));let raw='';for await(const c of req)raw+=c;const b=JSON.parse(raw);res.end(JSON.stringify(b.input.some(x=>x.type==='function_call_output')?{status:'completed',usage:{input_tokens:80,output_tokens:15},output:[{type:'message',id:'fixture-response',content:[{type:'output_text',text:'Acceptance fixture complete. The approved artifact is saved. This is a deterministic test response, not a live model generation.'}]}]}:{status:'completed',usage:{input_tokens:50,output_tokens:20},output:[{type:'function_call',call_id:'test-artifact',name:'create_artifact',arguments:JSON.stringify({name:'acceptance.md',content:'# Acceptance artifact\nCreated through the approved tool path.'})}]}))}).listen(4319,'127.0.0.1');
+runtime.app.post('/fixture/question', (req,res) => {
+  const run=runtime.store.all('runs').at(-1);
+  if(!run)return res.status(400).json({error:'Run the fixture task first'});
+  runtime.engine.approve(run.id,'user_input',{questions:[{id:'scope',header:'Scope',question:'Which project should Astra use?',options:[{label:'Current project',description:'Keep the work in this project.'}]}]},new AbortController().signal).then(()=>runtime.engine.patch(run.id,{status:'completed'}));
+  res.json({ok:true});
+});
+runtime.app.listen(4318,'127.0.0.1',()=>console.log('Isolated acceptance fixture on 4318'));

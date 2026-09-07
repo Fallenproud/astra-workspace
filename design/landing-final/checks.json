@@ -1,0 +1,11 @@
+{
+  "results": [
+    "All eight demo tabs switch in place",
+    "Demo run produces fixture artifact with zero API calls",
+    "Cancel, demo hamburger, and closing typewriter work",
+    "Five responsive widths, including 320px",
+    "Reduced motion produces static complete copy and releases WebGL"
+  ],
+  "errors": [],
+  "apiRequests": 0
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "id": "core-001",
+  "slug": "llm",
+  "name": "LLM",
+  "version": "1.0.0",
+  "category": "core",
+  "description": "General text reasoning, generation, summarization, rewriting, and structured response synthesis.",
+  "status": "executable",
+  "priority": 1,
+  "routing": {
+    "trigger": "Default for text-first tasks where no specialized modality is required.",
+    "boundary": "Do not use when a specialized modality is clearly required.",
+    "invoke_conditions": ["text input present", "no media or specialized tool required"],
+    "block_conditions": ["media generation requested", "code execution required"],
+    "fallback_chain": [],
+    "tags": ["text", "reasoning", "generation", "core"]
+  },
+  "execution": { "kind": "adapter", "binding": "core-001" },
+  "contracts": {
+    "inputs": ["natural language", "instructions", "optional context"],
+    "outputs": ["text", "markdown", "JSON"]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "fast",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": ">=7.0",
+    "sophie_x": "existing-api-compatible",
+    "openclaw": "export-adapter-planned"
+  }
+}

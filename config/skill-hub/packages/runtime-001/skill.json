@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "id": "runtime-001",
+  "slug": "registry-migration-parity",
+  "name": "Registry Migration & Parity Auditor",
+  "version": "0.1.0",
+  "category": "runtime",
+  "description": "Migrates legacy registry definitions into file-backed packages and blocks cutover when IDs, routing, contracts, policy, or runtime bindings drift.",
+  "status": "validated",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "migration",
+  "routing": {
+    "trigger": "Skill Hub registry is being migrated between storage authorities",
+    "boundary": "no source registry export is available",
+    "invoke_conditions": [
+      "Skill Hub registry is being migrated between storage authorities",
+      "legacy database definitions need file packages"
+    ],
+    "block_conditions": [
+      "no source registry export is available"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "registry",
+      "migration",
+      "parity",
+      "shadow-mode"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "legacy registry export",
+      "compiled file registry",
+      "adapter binding inventory"
+    ],
+    "outputs": [
+      "generated packages",
+      "parity report",
+      "mismatch list",
+      "cutover recommendation",
+      "rollback metadata"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": true
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

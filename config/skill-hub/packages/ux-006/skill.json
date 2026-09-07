@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "id": "ux-006",
+  "slug": "toptier-topology",
+  "name": "Toptier Topology",
+  "version": "0.1.0",
+  "category": "ux",
+  "description": "Determines efficient page, layout, component, state, interaction, and responsive topology before or during web application scaffolding.",
+  "status": "validated",
+  "priority": 2,
+  "routing": {
+    "trigger": "Use for new web application planning, frontend restructuring, component architecture, page topology, design-system-aware scaffolding, or layout hierarchy decisions.",
+    "boundary": "Do not invoke for isolated cosmetic edits, trivial copy changes, or backend-only work where frontend topology is unaffected.",
+    "invoke_conditions": [
+      "new frontend or web application architecture is being planned",
+      "existing frontend requires structural reorganization",
+      "component placement or reuse boundaries need to be decided",
+      "responsive transformation rules are required"
+    ],
+    "block_conditions": [
+      "single isolated style change",
+      "backend-only implementation",
+      "simple bug fix with no topology impact"
+    ],
+    "fallback_chain": [],
+    "tags": ["web-design", "scaffolding", "components", "responsive", "architecture", "ux"]
+  },
+  "execution": { "kind": "instructional", "binding": null },
+  "contracts": {
+    "inputs": ["product requirements", "existing frontend or reference material", "stack constraints", "design system constraints"],
+    "outputs": ["topology assessment", "route/page map", "component hierarchy", "state ownership", "responsive transformations", "implementation order", "quality gates"]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "fast",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  }
+}

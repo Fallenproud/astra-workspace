@@ -1,0 +1,2 @@
+:root{--bg:#0A0B0C;--surface:#0E1010;--raised:#141616;--elevated:#232626;--line:#4f515166;--green:#60B050;--highlight:#70C060;--text:#F3F6F3;--muted:#9DA89D;--secondary:#C8D0C8;--sheen:#ffffff06;--hover:#ffffff0d;color-scheme:dark;font-family:Geist,Inter,sans-serif}
+:root[data-theme=light]{--bg:#F6F8F6;--surface:#FFFFFF;--raised:#EEF3EE;--elevated:#FFFFFF;--line:#D7DDD7;--green:#407040;--highlight:#407040;--text:#141616;--muted:#5F6760;--secondary:#5F6760;--sheen:#00000002;--hover:#4f515110;color-scheme:light}

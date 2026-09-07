@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "id": "meta-003",
+  "slug": "skill-creator",
+  "name": "Skill Creator",
+  "version": "0.1.0",
+  "category": "meta",
+  "description": "Scaffolds reusable skill packages from an approved capability definition and canonical registry contract.",
+  "status": "defined",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "foundry-skill",
+  "routing": {
+    "trigger": "an approved capability definition needs packaging",
+    "boundary": "candidate has not passed source/provenance isolation",
+    "invoke_conditions": [
+      "an approved capability definition needs packaging"
+    ],
+    "block_conditions": [
+      "candidate has not passed source/provenance isolation",
+      "capability is only a vague prompt"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "foundry",
+      "scaffold",
+      "skills",
+      "schema"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "capability definition",
+      "routing boundary",
+      "contracts",
+      "policy",
+      "provenance"
+    ],
+    "outputs": [
+      "SKILL.md",
+      "skill.json",
+      "optional schemas/tests/examples",
+      "validation report"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "id": "agent-archify-001",
+  "slug": "archify-system-maps",
+  "name": "Archify System Maps",
+  "version": "0.1.0",
+  "category": "agent",
+  "description": "Creates trustworthy technical system maps through an Archify-first typed-IR workflow with deterministic validation, structured repair diagnostics, verified delivery receipts, and last-known-good preservation.",
+  "status": "validated",
+  "priority": 2,
+  "maturity": "L2",
+  "capability_type": "visualization",
+  "routing": {
+    "trigger": "User needs a trustworthy architecture, workflow, sequence, data-flow, lifecycle, or architecture-delta system map",
+    "boundary": "No system-map, topology, flow-visualization, or architecture-comparison intent is present",
+    "invoke_conditions": [
+      "visualize repository or system architecture",
+      "create workflow or agent tool-call map",
+      "create API/request sequence",
+      "create data-flow or lineage map",
+      "create lifecycle/state diagram",
+      "compare architecture before and after a change",
+      "convert Mermaid or prose system description into a verified technical artifact"
+    ],
+    "block_conditions": [
+      "task is ordinary code generation without visualization intent",
+      "requested claim would require unsupported runtime-impact or blast-radius inference"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "archify",
+      "architecture",
+      "workflow",
+      "sequence",
+      "dataflow",
+      "lifecycle",
+      "typed-ir",
+      "validation",
+      "receipts",
+      "atomic-delivery"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "repository evidence or bounded system description",
+      "requested diagram intent",
+      "optional existing Mermaid or structured topology",
+      "optional base/head architecture snapshots"
+    ],
+    "outputs": [
+      "typed system-map specification or Archify IR",
+      "validated technical artifact",
+      "structured diagnostics when validation fails",
+      "delivery/evidence receipt",
+      "truthful browser and perceptual-review status",
+      "smallest safe next step when unresolved"
+    ]
+  },
+  "policy": {
+    "cost_class": "medium",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": true,
+    "safe_for_parallel": false,
+    "stateful": false,
+    "logs_required": true
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export",
+    "codex": "upstream Archify skill compatible",
+    "cursor": "upstream Archify skill compatible",
+    "claude_code": "upstream Archify skill compatible",
+    "opencode": "upstream Archify skill compatible"
+  },
+  "provenance": {
+    "source_class": "upstream-reviewed-and-canonicalized",
+    "source_refs": [
+      "https://github.com/tt-a1i/archify",
+      "https://github.com/tt-a1i/archify/blob/main/archify/SKILL.md",
+      "https://github.com/tt-a1i/archify/blob/main/README.md",
+      "https://github.com/tt-a1i/archify/blob/main/DESIGN.md",
+      "https://github.com/tt-a1i/archify/blob/main/PRODUCT.md"
+    ],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [
+      "repository reader when source-grounded mode is requested",
+      "shell/Node.js when Archify CLI execution is requested",
+      "browser or image-capable reviewer when perceptual validation is requested"
+    ],
+    "external": [
+      "tt-a1i/archify (preferred rendering and validation implementation; MIT)"
+    ]
+  }
+}

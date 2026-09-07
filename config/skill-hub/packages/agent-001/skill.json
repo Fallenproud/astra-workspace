@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "id": "agent-001",
+  "slug": "agent-creation-packaging",
+  "name": "Agent Creation & Packaging",
+  "version": "0.1.0",
+  "category": "agent",
+  "description": "Creates a specialist agent package with responsibility, system contract, tools, permissions, memory policy, runtime expectations, evaluation, and provenance.",
+  "status": "defined",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "workflow",
+  "routing": {
+    "trigger": "a specialist agent needs to be designed or normalized",
+    "boundary": "request only needs a one-off prompt with no reusable agent lifecycle",
+    "invoke_conditions": [
+      "a specialist agent needs to be designed or normalized"
+    ],
+    "block_conditions": [
+      "request only needs a one-off prompt with no reusable agent lifecycle"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "agent",
+      "identity",
+      "permissions",
+      "memory",
+      "evaluation"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "mission",
+      "domain boundaries",
+      "tools/runtimes",
+      "memory requirements",
+      "risk constraints"
+    ],
+    "outputs": [
+      "agent manifest",
+      "system contract",
+      "tool permissions",
+      "memory policy",
+      "evaluation plan",
+      "runtime/deployment notes"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "canvas": "#F6F8F6",
+  "surface": "#FFFFFF",
+  "secondarySurface": "#EEF3EE",
+  "border": "#D7DDD7",
+  "text": "#141616",
+  "secondaryText": "#5F6760",
+  "accent": "#407040"
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "id": "ux-007",
+  "slug": "screenshot-to-blueprint",
+  "name": "Screenshot to Blueprint",
+  "version": "0.1.0",
+  "category": "ux",
+  "description": "Converts approved visual references into measurable layout, component, token, asset, and implementation blueprints before code generation.",
+  "status": "defined",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "analysis",
+  "routing": {
+    "trigger": "screenshots or mockups must be translated into implementation structure",
+    "boundary": "reference image is missing",
+    "invoke_conditions": [
+      "screenshots or mockups must be translated into implementation structure"
+    ],
+    "block_conditions": [
+      "reference image is missing",
+      "task only requests image generation"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "frontend",
+      "screenshot",
+      "blueprint",
+      "components",
+      "tokens"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "screenshots or visual references",
+      "viewport information if known",
+      "project constraints"
+    ],
+    "outputs": [
+      "layout map",
+      "component inventory",
+      "spacing/dimension notes",
+      "token extraction",
+      "asset map",
+      "implementation prompt"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [
+      "registry-id-history:ux-001→ux-007"
+    ],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

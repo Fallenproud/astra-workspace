@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "id": "meta-002",
+  "slug": "skill-archaeologist",
+  "name": "Skill Archaeologist",
+  "version": "0.1.0",
+  "category": "meta",
+  "description": "Discovers reusable capabilities across chats, files, repositories, archives, and deployed systems while preserving provenance and project boundaries.",
+  "status": "validated",
+  "priority": 1,
+  "maturity": "L2",
+  "capability_type": "foundry-skill",
+  "routing": {
+    "trigger": "historical work should be mined for reusable skills",
+    "boundary": "request is to merge unrelated project identities",
+    "invoke_conditions": [
+      "historical work should be mined for reusable skills",
+      "a registry migration must preserve old capabilities"
+    ],
+    "block_conditions": [
+      "request is to merge unrelated project identities"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "foundry",
+      "archaeology",
+      "provenance",
+      "deduplication"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "source surfaces",
+      "time/scope boundaries",
+      "existing skill inventory"
+    ],
+    "outputs": [
+      "candidate ledger",
+      "source register",
+      "duplicate clusters",
+      "project profiles",
+      "promotion queue"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": false
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}

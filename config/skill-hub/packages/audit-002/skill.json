@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "id": "audit-002",
+  "slug": "legacy-donor-extraction",
+  "name": "Legacy Donor Extraction",
+  "version": "0.1.0",
+  "category": "audit",
+  "description": "Extracts reusable code, infrastructure, patterns, and assets from a legacy project while keeping the original project read-only and preventing identity/architecture contamination.",
+  "status": "defined",
+  "priority": 2,
+  "maturity": "L2",
+  "capability_type": "recovery",
+  "routing": {
+    "trigger": "older project/backup may contain reusable implementation for a new/current system",
+    "boundary": "user asks to merge project identities wholesale",
+    "invoke_conditions": [
+      "older project/backup may contain reusable implementation for a new/current system"
+    ],
+    "block_conditions": [
+      "user asks to merge project identities wholesale"
+    ],
+    "fallback_chain": [],
+    "tags": [
+      "legacy",
+      "reuse",
+      "recovery",
+      "porting"
+    ]
+  },
+  "execution": {
+    "kind": "instructional",
+    "binding": null
+  },
+  "contracts": {
+    "inputs": [
+      "legacy donor repository/archive",
+      "target requirements",
+      "target source-of-truth boundaries"
+    ],
+    "outputs": [
+      "donor inventory",
+      "keep/port/adapt/reference/reject matrix",
+      "dependency risks",
+      "port plan"
+    ]
+  },
+  "policy": {
+    "cost_class": "low",
+    "latency_class": "normal",
+    "requires_auth": false,
+    "requires_freshness": false,
+    "safe_for_parallel": true,
+    "stateful": false,
+    "logs_required": true
+  },
+  "compatibility": {
+    "skill_hub": "v8-native; v7 via registry adapter",
+    "sophie_x": "loadable-through-skill-hub",
+    "openclaw": "SKILL.md-compatible after manifest export"
+  },
+  "provenance": {
+    "source_class": "recovered-and-canonicalized",
+    "source_refs": [],
+    "project_scope": "domain-neutral"
+  },
+  "dependencies": {
+    "skills": [],
+    "tools": [],
+    "external": []
+  }
+}
